@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 引用bootstrap -->
+    <!-- 若有自己的 CSS 的話，要將你的檔案放在 Bootstrap 的後面，當 Bootstrap 和你的 CSS 發生衝突，應該要以你的為主。  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/52c9e592a9.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Fake User List</title>
+  </head>
+
+  <body>
+    <!-- 導覽列 -->
+    <!-- 置頂有fixed-top和sticky-top，排版上有差，但邏輯尚未釐清 -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light sticky-top"
+      style="background-color: #e3f2fd"
+    >
+      <div class="container-fluid">
+        <div class="col-sm-8">
+          <a class="navbar-brand" href="練習.html"><u>Fake User List</u></a>
+        </div>
+        <div>
+          <a class="nav-link me-2" href="following.html">Following</a>
+        </div>
+
+        <form class="d-flex" id="search-form">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            id="search-input"
+          />
+          <button class="btn btn-outline-success" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="btn btn-info btn-refresh ms-1" id="refresh">
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- 主畫面 -->
+    <div class="container">
+      <div class="row" id="data-panel"></div>
+    </div>
+
+    <!-- 分頁 -->
+    <nav aria-label="Page navigation example">
+      <p
+        class="d-flex justify-content-center fw-bold bg-light mb-0"
+        id="page-active"
+      ></p>
+      <ul class="pagination justify-content-center" id="paginator"></ul>
+    </nav>
+
+    <!-- modal -->
+    <div
+      class="modal fade"
+      id="user-modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="user-modal-name"></h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-3" id="user-modal-image"></div>
+              <div class="col-sm-6">
+                <ul>
+                  <li id="user-modal-email">email:</li>
+                  <li id="user-modal-gender">gender:</li>
+                  <li id="user-modal-age">age:</li>
+                  <li id="user-modal-region">region:</li>
+                  <li id="user-modal-birthday">birthday:</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./練習.js"></script>
+  </body>
+</html>
